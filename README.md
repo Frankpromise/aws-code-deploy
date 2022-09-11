@@ -37,15 +37,6 @@ It allows release of new features, avoid downtime and and avoid manual testing o
 10. Afterinstall: Post-install scripts.
 
 
-#### prerequisites
-
-create a I am profile to deploy the terraform scripts on aws.
-clone the github repository Frankpromise/aws-code-deploy (github.com)
-cd into aws-code-deploy
-run terraform init
-run terraform apply --auto-approve
-
-
 ### STEP 1
 
 git clone Frankpromise/aws-code-deploy (github.com)
@@ -56,21 +47,10 @@ run aws deploy create-application — application-name mywebapp
 run aws deploy push — application-name mywebapp — s3-location s3://cd-bucket10/webapp.zip — ignore-hidden-files
 
 
-Go to the aws console, you should see this.
-
-
 click on mywebapp
 
 
 click on create deployment group
-
-
-
-
-
-
-click on create deployment
-
 
 
 leave everything as default and click create deployment
