@@ -1,5 +1,7 @@
 # terraform-for-codedeploy
 
+![codedeploy](https://user-images.githubusercontent.com/99150197/189550756-d5a218c1-b876-41df-abdd-5046e1aa60ff.jpg)
+
 
 ## CODE DEPLOY:
 Automates code deployment to any instance, including EC2, Lambda and on-premises.
@@ -34,9 +36,49 @@ It allows release of new features, avoid downtime and and avoid manual testing o
 9. Validate service: Runs test to validate service.
 10. Afterinstall: Post-install scripts.
 
-### TASK
 
 #### prerequisites
 
-1. create service role to allow EC2 instance to access the source code located in s3 bucket
-2. create role for codedeploy to allow codedeploy make API calls on our behalf and to give it permissions to install an application on our EC2 instance.
+create a I am profile to deploy the terraform scripts on aws.
+clone the github repository Frankpromise/aws-code-deploy (github.com)
+cd into aws-code-deploy
+run terraform init
+run terraform apply --auto-approve
+
+
+### STEP 1
+
+git clone Frankpromise/aws-code-deploy (github.com)
+cd aws-code-deploy
+run aws deploy create-application — application-name mywebapp
+
+
+run aws deploy push — application-name mywebapp — s3-location s3://cd-bucket10/webapp.zip — ignore-hidden-files
+
+
+Go to the aws console, you should see this.
+
+
+click on mywebapp
+
+
+click on create deployment group
+
+
+
+
+
+
+click on create deployment
+
+
+
+leave everything as default and click create deployment
+
+
+if everything works, you should see the webpage.
+
+REFERENCES:
+
+A cloud guru
+
